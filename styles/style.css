@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DynaPuff', 'Poppins' sans-serif;
+  /* scroll-behavior: auto; */
+}
+body{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(6, 53, 114, 0.4), rgba(17, 10, 29, 0.4) , rgba(18, 10, 30, 0.2)), url(../sp2.jpeg) no-repeat fixed;
+  background-size: cover;
+  /* opacity: 0.9; */
+  /* background-image: url(../sp1.jpg); */
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(6, 53, 114, 0.8);
+    /* margin-left: 15%; */
+}
+nav{
+  background-color: rgb(6, 53, 114);
+}
+table{
+  background-color: rgba(6, 53, 114, 0.8)
+}
+.nav-item:hover{
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.navbar-brand{
+  font-family: Castellar;
+}
+#btn_bg {
+  background-color: rgb(6, 24, 48);
+}
