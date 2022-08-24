@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+</head>
+<body>
+    <div>
+        <nav class="navbar p-2 navbar-brand-expand-sm">
+            <a class="navbar-brand" href="index.html"  style="color: rgb(146, 184, 233);">Da Baron School of Technical Studies</a>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link text-light" target="_self">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link text-light" target="_self">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="check_grade.html" class="nav-link  text-light" target="_self">Check Grade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search_list.html" class="nav-link text-light" target="_self">Get Course List</a>
+                        &nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a href="student_list.html" class="nav-link text-light" target="_self">All Students</a>
+                    </li>&nbsp;
+                </ul>
+        </nav>
+    </div>
+    <section class="row p-3 pb-0">
+        <div class="col-3 offset-9">
+            <div class="input-group">
+                <input class="form-control w-50" type="text" id="Search" placeholder="Name or Email Address">
+                <button id="btn_bg" class="btn form-control btn-dark text-light p-0" onclick="searchList()">
+                Search
+                </button>
+                
+            </div>
+            <p class="text-center">
+                <a href="student_list.html" class=" text-warning" target="_self">
+                    Get Full list of registered student
+                </a>
+            </p>
+    </section>
+    <table class="w-50 text-center mx-auto shadow text-light table m-5" id="search_list" style="background-color: rgba(6, 53, 114, 0.8); visibility: hidden;">
+        <thead id="table_head">
+            <th>Name</th>
+            <th>E-mail Address</th>
+        </thead>
+    </table>
+</body>
+<script>
+    Search.focus()
+    let all_students = JSON.parse(localStorage.getItem("student_details"))
+    let scoreDetails = JSON.parse(localStorage.getItem("student_score_details"))
+    searchList = () =>{
+        let student = all_students.find((item, index) =>(Search.value == item.FirstName || Search.value == item.MiddleName || Search.value == item.LastName))
+        search_list.style.visibility = "visible"
+        search_list.innerHTML += `<tr></td><td> ${student.FirstName} ${student.MiddleName}  ${student.LastName} </td><td>${student.EmailAddress}</tr></td>`
+    }    
+   
+</script>
+</html>
