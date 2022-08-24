@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+</head>
+<body onload="getList()">
+    <div style="position: fixed; width: 100%;">
+        <nav class="navbar p-2 navbar-brand-expand-sm">
+            <a class="navbar-brand" href="index.html"  style="color: rgb(146, 184, 233);">Da Baron School of Technical Studies</a>
+                <ul class="nav">
+                    <li class="nav-item btn p-0">
+                        <a href="index.html" class="nav-link text-light" target="_self">Sign Up</a>
+                    </li>
+                    <li class="nav-item btn p-0">
+                        <a href="login.html" class="nav-link text-light" target="_self">Log In</a>
+                    </li>
+                    <li class="nav-item btn p-0">
+                        <a href="check_grade.html" class="nav-link  text-light" target="_self">Check Grade</a>
+                    </li>
+                    <li class="nav-item btn p-0">
+                        <a href="student_list.html" class="nav-link text-light" target="_self">All Students</a>
+                    </li>&nbsp;
+                </ul>
+        </nav>
+    </div>
+    <section class="row p-3 pb-0" style="background-color: transparent;">
+        <div class="col-12 w-100" style="background-color: rgba(6, 53, 114, 0.8)">
+            <p class="mt-5 fs-3 text-center text-light">
+                Full List of Registered Students 
+                <hr class="text-light">
+            </p> 
+            
+            <table class="w-50 text-center mx-auto shadow text-light table" id="search_list">
+                <thead id="table_head">
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>E-mail Address</th>
+                </thead>
+            </table>
+        </div>
+    </section>
+    
+</body>
+<script>
+    var all_students = JSON.parse(localStorage.getItem("student_details"))
+
+getList = () =>{
+    // loops through all_student and displays the name and emailaddress for each student in the array
+    all_students.map((student, index) =>{
+        search_list.style.visibility = "visible"
+        search_list.innerHTML += `<tr><td>${index+1}</td><td> ${student.FirstName} ${student.MiddleName}  ${student.LastName} </td><td>${student.EmailAddress}</tr></td>`
+})
+}
+</script>
+</html>
