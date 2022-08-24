@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div>
+        <nav class="navbar p-2 navbar-brand-expand-sm">
+            <a class="navbar-brand" href="index.html"  style="color: rgb(146, 184, 233);">Da Baron School of Technical Studies</a>
+                <ul class="nav text-light">
+                    <li class="nav-item btn p-0">
+                        <a href="login.html" class="nav-link text-light" target="_self">Log In</a>
+                    </li>&nbsp;
+                    <li class="nav-item btn p-0">
+                        <a href="check_grade.html" class="nav-link text-light" target="_self">Check Grade</a>
+                    </li>&nbsp;
+                    <li class="nav-item">
+                        <button class="btn" onclick="getList()">
+                            <a href="search_list.html" class="nav-link text-light p-0" target="_self">Get Course List</a>
+                        </button>
+                        &nbsp;
+                    </li>
+                    <li class="nav-item btn p-0">
+                        <a href="student_list.html" class="nav-link text-light" target="_self">All Students</a>
+                    </li>&nbsp;
+                </ul>
+        </nav>
+    </div>
+    
+    <section class="rounded text-center col-11 col-sm-10 col-md-5 col-lg-3 col-xl-3 shadow mx-auto mt-5"> 
+        <div class="row col-sm-12 text-center p-4 form-group mt-3">
+            <div class="alert alert-danger alert-dismissible form-control mb-2 p-2 text-dark" id="warning" style="display: none">
+                ERROR!! All fields are required
+                <button class="btn p-0 close" data-dismiss="alert" onclick="closeDiv()" style="float: right;">&times;</button>
+            </div>
+            <input class="form-control" type="text" id="firstName" placeholder="First Name">
+            &nbsp;
+            <input class="form-control" type="text" id="middleName" placeholder="Middle Name">
+            &nbsp;
+            <input class="form-control" type="text" id="lastName" placeholder="Last Name">
+            &nbsp;
+            <input class="form-control" type="email" id="emailAddress" placeholder="E-Mail: example@gmail.com">
+            &nbsp;
+            <input class="form-control" type="password" id="userPassword" placeholder="Password">
+            &nbsp;
+            <button class="btn btn-outline-secondary form-control text-light" id="btn_bg" onclick="addStudent()">Add Student</button>
+            &nbsp;
+            <div>
+                <a class=" text-warning " href="search_list.html" target="_self">Search Student?</a> &nbsp;
+                <span class="text-light">
+                    Already registered?
+                </span> 
+                <a class=" text-warning" href="login.html" target="_self">Log in</a>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="reg_portal.js"></script>
+</html>
