@@ -6,11 +6,11 @@ let gotoCheck = () =>{
 }
 let gotoCourse = () =>{
     home_page.style.display = "none"
-    window.location.href = "student_list.html"
+    window.location.href = "search_list.html"
 }
 let gotoStudents = () =>{
     home_page.style.display = "none"
-    window.location.href = "search_list.html"
+    window.location.href = "student_list.html"
 }
 let showLogin = () => {
     home_page.style.display = "none"
