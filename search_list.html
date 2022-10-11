@@ -54,7 +54,7 @@
                 </a>
             </p>
     </div>
-    <table class="w-50 text-center mx-auto shadow text-light table m-5" id="search_list" style="background-color: rgba(6, 53, 114, 0.8); visibility: hidden;">
+    <table class="w-50 text-center mx-auto shadow text-light table m-5" id="search_list" style="background-color: rgba(6, 53, 114, 0.8); display: none;">
         <thead id="table_head">
             <th>Name</th>
             <th>E-mail Address</th>
@@ -67,7 +67,7 @@
     let scoreDetails = JSON.parse(localStorage.getItem("student_score_details"))
     searchList = () =>{
         let student = all_students.find((item, index) =>(Search.value == item.FirstName || Search.value == item.MiddleName || Search.value == item.LastName))
-        search_list.style.visibility = "visible"
+        search_list.style.display = "block"
         search_list.innerHTML += `<tr></td><td> ${student.FirstName} ${student.MiddleName}  ${student.LastName} </td><td>${student.EmailAddress}</tr></td>`
     }    
    
