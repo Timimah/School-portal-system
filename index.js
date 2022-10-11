@@ -75,7 +75,7 @@ let addStudent = () =>{
     lastName.value = ""
     emailAddress.value = ""
     userPassword.value = ""
-    window.location.href = "index.html"
+    //window.location.href = "index.html"
     showLogin()
 }
 
