@@ -25,7 +25,7 @@
                 </button>
                 <div class="collapse navbar-collapse mx-auto align-center justify-content-end" id="navbarContent">
                     <ul class="navbar-nav">
-                        <a class="nav-link text-dark text-center border-top" href="#login_page" target="_self" onclick ="showLogin()">Log In</a>
+                        <a class="nav-link text-dark text-center" href="#login_page" target="_self" onclick ="showLogin()">Log In</a>
                         <a class="nav-link text-dark text-center" href="#register_page" target="_self" onclick="showRegister()">Register</a>
                     </ul>
                 </div>
@@ -64,8 +64,8 @@
                 </div>
             </div>
             <div id="login_page" style="display: none;">
-                <h2 class="mb-5 ms-5 mt-4">Log In</h2>
-                <div class="form input-group-vertical px-5 my-5 mw-80">
+                <h2 class="mb-5 ms-1 ms-md-5 ms-lg-5 mt-4">Log In</h2>
+                <div class="form px-1 px-md-5 px-lg-5 my-5 mw-80">
                     <input class="form-control p-3 rounded mb-4" type="email" name="" id="email_Address" placeholder="Email Address">
                     <input class="form-control p-3 rounded mb-4" type="password" name="" id="user_Password" placeholder="Password">
                     <button class="btn text-light form-control p-3 rounded mb-4" type="text" name="" style="background-color: #010566;" onclick="logIn()">Log In</button> <br><br>
@@ -73,11 +73,11 @@
                 </div>
             </div>
             <div id="register_page" style="display: none;">
-                <h2 class="mb-5 ms-5 mt-4">Register</h2>
-                <div class="form input-group-vertical px-5 my-5">
-                    <div class="input-group">
-                        <input placeholder="First Name" class="form-control p-3 me-4 rounded" type="text" name="" id="firstName">
-                        <input placeholder="Middle Name" class="form-control p-3 rounded" type="text" name="" id="middleName">
+                <h2 class="mb-5 ms-1 ms-md-5 ms-lg-5 mt-4">Register</h2>
+                <div class="form px-1 px-md-5 px-lg-5 my-5">
+                    <div class="d-md-flex d-lg-flex">
+                        <input placeholder="First Name" class="form-control p-3 me-4 mb-4 mb-md-0 mb-lg-0 rounded col" type="text" name="" id="firstName">
+                        <input placeholder="Middle Name" class="form-control p-3 rounded col" type="text" name="" id="middleName">
                     </div><br>
                     <input placeholder="Last Name" class="form-control p-3 rounded" type="text" name="" id="lastName"><br>
                     <input placeholder="Email Address" class="form-control p-3 rounded" type="email" name="" id="emailAddress"><br>
@@ -88,14 +88,14 @@
                 </div>
             </div>
             <div id="check_grade" style="display: none;">
-                <h2 class="mb-5 mt-5 px-5">Check Grade</h2>
-                <div class="form input-group-vertical px-5 my-5">
-                    <div class="input-group">
-                        <input class="form-control p-3 me-4 rounded" type="text" name="" id="f_name" placeholder="First Name">
+                <h2 class="mb-5 mt-5 px-1 px-md-5 px-lg-5">Check Grade</h2>
+                <div class="form px-1 px-md-5 px-lg-5 my-5">
+                    <div class="d-md-flex d-lg-flex">
+                        <input class="form-control p-3 me-4 rounded mb-4 mb-md-0 mb-lg-0" type="text" name="" id="f_name" placeholder="First Name">
                         <input class="form-control p-3 rounded" type="text" name="" id="m_name" placeholder="Middle Name">
                     </div><br>
-                    <div class="input-group">
-                        <input class="form-control p-3 me-4 rounded" type="text" name="" id="l_name" placeholder="Last Name">
+                    <div class="d-md-flex d-lg-flex">
+                        <input class="form-control p-3 me-4 rounded mb-4 mb-md-0 mb-lg-0" type="text" name="" id="l_name" placeholder="Last Name">
                         <input class="form-control p-3 rounded" type="text" name="" id="c_code" placeholder="Course Code">
                     </div><br>
                     <input class="form-control p-3 rounded" type="text" name="" id="c_title" placeholder="Course Title"><br>
