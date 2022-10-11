@@ -75,7 +75,8 @@ let addStudent = () =>{
     lastName.value = ""
     emailAddress.value = ""
     userPassword.value = ""
-    window.location.href = "login.html"
+    window.location.href = "index.html"
+    showLogin()
 }
 
 // login function
@@ -96,7 +97,7 @@ let logIn = () =>{
     }
     if (found == true) {
         alert("logged in")
-        window.location.href = "check_grade.html"
+        window.location.href = "search_list.html"
     } 
     else if (found == false) {
             // console.log("Not found")
