@@ -10,6 +10,9 @@
 .home_card:hover{
   background-color: #F2F2F2;
 }
+#btn_bg {
+  background-color: rgb(6, 24, 48);
+}
 /* body{ */
   /* height: 100%;
   width: 100%;
@@ -38,6 +41,3 @@ nav{
 .navbar-brand{
   font-family: Castellar;
 }
-#btn_bg {
-  background-color: rgb(6, 24, 48);
-} */
