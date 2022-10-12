@@ -97,7 +97,7 @@ let logIn = () =>{
     }
     if (found == true) {
         alert("logged in")
-        window.location.href = "search_list.html"
+        window.location.href = "index.html"
     } 
     else if (found == false) {
             // console.log("Not found")
