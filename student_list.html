@@ -10,52 +10,76 @@
     <link rel="stylesheet" href="./styles/bootstrap.css">
 </head>
 <body onload="getList()">
-    <div style="position: fixed; width: 100%;">
-        <nav class="navbar p-2 navbar-brand-expand-sm">
-            <a class="navbar-brand" href="index.html"  style="color: rgb(146, 184, 233);">Da Baron School of Technical Studies</a>
-                <ul class="nav">
-                    <li class="nav-item btn p-0">
-                        <a href="index.html" class="nav-link text-light" target="_self">Sign Up</a>
-                    </li>
-                    <li class="nav-item btn p-0">
-                        <a href="login.html" class="nav-link text-light" target="_self">Log In</a>
-                    </li>
-                    <li class="nav-item btn p-0">
-                        <a href="check_grade.html" class="nav-link  text-light" target="_self">Check Grade</a>
-                    </li>
-                    <li class="nav-item btn p-0">
-                        <a href="student_list.html" class="nav-link text-light" target="_self">All Students</a>
-                    </li>&nbsp;
-                </ul>
-        </nav>
+    <div class="navbar navbar-expand-lg navbar-expand-md" role="navigation" style="background-color: #010566;">
+        <a class="navbar-brand" href="index.html" target="_self">
+            <img src="images/logo2.png" alt="DaBAron Logo" width="175" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-auto align-center justify-content-end" id="navbarContent">
+            <ul class="navbar-nav">
+                <a class="nav-link text-light text-center" href="#login_page" target="_self" onclick ="showLogin()">Log In</a>
+                <a class="nav-link text-light text-center" href="#register_page" target="_self" onclick="showRegister()">Register</a>
+            </ul>
+        </div>
     </div>
-    <section class="row p-3 pb-0" style="background-color: transparent;">
-        <div class="col-12 w-100" style="background-color: rgba(6, 53, 114, 0.8)">
-            <p class="mt-5 fs-3 text-center text-light">
-                Full List of Registered Students 
-                <hr class="text-light">
-            </p> 
-            
-            <table class="w-50 text-center mx-auto shadow text-light table" id="search_list">
+    <div>
+        <h3 class="my-4 ms-5">Registered Students</h3>
+        <div>
+            <div class="p-4 d-md-flex d-lg-flex w-100" style="background: #F8FAFB;">
+                <div class="d-flex ms-4 justify-content-start mb-4 mb-md-0 mb-lg-0 w-75">
+                    <!-- background-color: #010566;  -->
+                    <button id="form-control" class="btn border border-end-0" onclick="searchList()" style="border-top-right-radius: 0; border-bottom-right-radius: 0; background-color: #fff;">
+                        <img src="images/searchicon.svg" width="15" alt="" srcset="">
+                    </button>
+                    <input class="form-control border-start-0 w-50" type="text" id="Search" placeholder="Name or Email Address" style="width: 2em; border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                </div>
+                <div class="justify-content-end ms-4 mw-50 w-auto">
+                    <button class="btn text-light text-center w-100 px-5" style="background-color: #010566;">
+                        <span class="ps-3 pe-1">
+                            <img src="images/cg0.1.png" alt="" srcset="" style="margin-bottom: 1.2em;">
+                            <img src="images/cg0.png" alt="" style="position: absolute; margin-left: -1.138em; margin-top: 0.3em;">
+                        </span>
+                        Check Grade
+                    </button>
+                </div>   
+            </div>
+            <table class="text-center shadow text-dark table" id="search_list">
+                <!-- style="display: none;" -->
                 <thead id="table_head">
                     <th>S/N</th>
-                    <th>Name</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
                     <th>E-mail Address</th>
+                    <th>Date Registered</th>
                 </thead>
             </table>
         </div>
     </section>
     
 </body>
-<script>
-    var all_students = JSON.parse(localStorage.getItem("student_details"))
-
-getList = () =>{
+<script>   
+var all_students = JSON.parse(localStorage.getItem("student_details"))
+let date = new Date()
+let cTime = date.toLocaleDateString()
+let getList = () =>{
     // loops through all_student and displays the name and emailaddress for each student in the array
     all_students.map((student, index) =>{
-        search_list.style.visibility = "visible"
-        search_list.innerHTML += `<tr><td>${index+1}</td><td> ${student.FirstName} ${student.MiddleName}  ${student.LastName} </td><td>${student.EmailAddress}</tr></td>`
+        search_list.style.display = "block"
+        search_list.innerHTML += `<tr><td>${'00' + index+1}</td><td>${student.FirstName}</td><td>${student.MiddleName}</td><td>${student.LastName}</td><td>${student.EmailAddress}</td><td>${cTime}<td></tr>`
 })
+}
+
+Search.focus()
+// let all_students = JSON.parse(localStorage.getItem("student_details"))
+let scoreDetails = JSON.parse(localStorage.getItem("student_score_details"))
+searchList = () =>{
+    search_list.style.display = "none"
+    let student = all_students.find((item, index) =>(Search.value == item.FirstName || Search.value == item.MiddleName || Search.value == item.LastName || Search.value == item.EmailAddress))
+    search_list.style.display = "block"
+    search_list.innerHTML += `<tr></td><td> ${student.FirstName} ${student.MiddleName}  ${student.LastName} </td><td>${student.EmailAddress}</tr></td>`
 }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
