@@ -6,7 +6,7 @@ let gotoCheck = () =>{
 }
 let gotoCourse = () =>{
     home_page.style.display = "none"
-    window.location.href = "search_list.html"
+    window.location.href = "course_list.html"
 }
 let gotoStudents = () =>{
     home_page.style.display = "none"
