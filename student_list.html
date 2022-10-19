@@ -26,39 +26,36 @@
     </div>
     <div>
         <h3 class="my-4 ms-5">Registered Students</h3>
-        <div>
-            <div class="p-4 d-md-flex d-lg-flex w-100" style="background: #F8FAFB;">
-                <div class="d-flex ms-4 justify-content-start mb-4 mb-md-0 mb-lg-0 w-75">
+        <div class="p-4 row" style="background: #F8FAFB;">
+            <div class="d-flex mb-4 mb-md-0 mb-lg-0 col-12 col-lg-5 col-md-5">
                     <!-- background-color: #010566;  -->
-                    <button id="form-control" class="btn border border-end-0" onclick="searchList()" style="border-top-right-radius: 0; border-bottom-right-radius: 0; background-color: #fff;">
-                        <img src="images/searchicon.svg" width="15" alt="" srcset="">
-                    </button>
-                    <input class="form-control border-start-0 w-50" type="text" id="Search" placeholder="Name or Email Address" style="width: 2em; border-top-left-radius: 0; border-bottom-left-radius: 0;">
-                </div>
-                <div class="justify-content-end ms-4 mw-50 w-auto">
-                    <button class="btn text-light text-center w-100 px-5" style="background-color: #010566;">
-                        <span class="ps-3 pe-1">
-                            <img src="images/cg0.1.png" alt="" srcset="" style="margin-bottom: 1.2em;">
-                            <img src="images/cg0.png" alt="" style="position: absolute; margin-left: -1.138em; margin-top: 0.3em;">
-                        </span>
-                        Add Student
-                    </button>
-                </div>   
+                <button id="form-control" class="btn border border-end-0" onclick="searchList()" style="border-top-right-radius: 0; border-bottom-right-radius: 0; background-color: #fff;">
+                    <img src="images/searchicon.svg" width="15" alt="" srcset="">
+                </button>
+                <input class="form-control border-start-0 w-100" type="text" id="Search" placeholder="Name or Email Address" style="width: 2em; border-top-left-radius: 0; border-bottom-left-radius: 0;">
             </div>
-            <table class="text-center shadow text-dark table" id="search_list">
-                <!-- style="display: none;" -->
-                <thead id="table_head">
-                    <th>S/N</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>E-mail Address</th>
-                    <th>Date Registered</th>
-                </thead>
-            </table>
+            <div class="col-md-3 col-lg-3 col-12"></div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <button class="btn text-light text-center w-100 px-5" style="background-color: #010566;">
+                    <span class="ps-3 pe-1">
+                        <img src="images/cg0.1.png" alt="" srcset="" style="margin-bottom: 1.2em;">
+                        <img src="images/cg0.png" alt="" style="position: absolute; margin-left: -1.138em; margin-top: 0.3em;">
+                    </span>
+                        Add Student
+                </button>
+            </div>   
         </div>
-    </section>
-    
+        <table class="text-center text-dark table" id="search_list">
+            <!-- style="display: none;" -->
+            <thead id="table_head">
+                <th class="py-3">S/N</th>
+                <th class="py-3">First Name</th>
+                <th class="py-3">Middle Name</th>
+                <th class="py-3">Last Name</th>
+                <th class="py-3">E-mail Address</th>
+                <th class="py-3">Date Registered</th>
+            </thead>
+        </table>  
 </body>
 <script>   
 var all_students = JSON.parse(localStorage.getItem("student_details"))
@@ -68,7 +65,7 @@ let getList = () =>{
     // loops through all_student and displays the name and emailaddress for each student in the array
     all_students.map((student, index) =>{
         search_list.style.display = "block"
-        search_list.innerHTML += `<tr><td>${'00' + index+1}</td><td>${student.FirstName}</td><td>${student.MiddleName}</td><td>${student.LastName}</td><td>${student.EmailAddress}</td><td>${cTime}<td></tr>`
+        search_list.innerHTML += `<tr><td  class="py-3">${'00' + index+1}</td><td  class="py-3">${student.FirstName}</td><td  class="py-3">${student.MiddleName}</td><td  class="py-3">${student.LastName}</td><td  class="py-3">${student.EmailAddress}</td><td  class="py-3">${cTime}</td></tr>`
 })
 }
 
