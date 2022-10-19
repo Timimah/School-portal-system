@@ -82,7 +82,7 @@ let addStudent = () =>{
 // login function
 let logIn = () =>{
     let found = false
-    alert("li")
+    //alert("li")
     if(email_Address.value != "" && user_Password.value != ""){
         // alert("Not empty")
         allStudents.forEach(element => {
@@ -96,7 +96,7 @@ let logIn = () =>{
         document.getElementById("warning").style.display = "block"
     }
     if (found == true) {
-        alert("logged in")
+        //alert("logged in")
         window.location.href = "index.html"
     } 
     else if (found == false) {
