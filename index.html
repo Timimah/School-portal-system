@@ -12,10 +12,32 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <style>
+        /* @media only screen and (min-width: 600px){
+            #continue_btn{
+                display: none;
+            }
+        } */
+        /* @media only screen and (max-width: 600px){
+            #continue_btn{
+                display: none;
+            }
+        } */
+        /* @media only screen and (min-width: 768px){
+            #continue_btn{
+                display: none;
+            }
+        } */
+        /* @media only screen and (min-width: 992px){
+            #continue_btn{
+                display: none;
+            }
+        } */
+    </style>
 </head>
 <body class="container-fluid">
     <div class="row">
-        <div class="col col-lg-8 col-md-12 px-5">
+        <div class="col  col-lg-8 col-md-12 px-5">
             <div class="navbar navbar-expand-lg navbar-expand-md" role="navigation">
                 <a class="navbar-brand" href="index.html" target="_self">
                     <img src="images/logo3.png" alt="DaBAron Logo" width="170" srcset="">
@@ -33,7 +55,7 @@
             <div class="mx-nd-5 mx-lg-5" id="home_page">
                 <h2 class="mb-5 mt-2 mx-auto">What will you like to do?</h2>
                 <div class="row mx-md-3 mx-lg-3 border rounded mb-4 home_card" onclick="gotoCheck()">
-                    <div class="px-4 col-xl-10 col-lg-10 col-md-10 col">
+                    <div class="px-4 p-3 col-xl-10 col-lg-10 col-md-10 col">
                         <h6 class="mt-3">Check Grade</h6>
                         <p style="color: #B4B4B4;">Inputing your first, middle and last name with course code, you can check your grade.</p>
                     </div>
@@ -42,7 +64,7 @@
                     </div>
                 </div>
                 <div class="row mx-md-3 mx-lg-3 border rounded mb-5 home_card" onclick="gotoCourse()">
-                    <div class="px-4 col-xl-10 col-lg-10 col-md-10 col">
+                    <div class="px-4 p-3 col-xl-10 col-lg-10 col-md-10 col">
                         <h6 class="mt-3">Get Course List</h6>
                         <p style="color: #B4B4B4;">All courses offered are available to view. You will also get to know the instructor in charge.</p>
                     </div>
@@ -51,7 +73,7 @@
                     </div>
                 </div>
                 <div class="row mx-md-3 mx-lg-3 border rounded mb-5 home_card" onclick="gotoStudents()">
-                    <div class="px-4 col-xl-10 col-lg-10 col-md-10 col">
+                    <div class="px-4 p-3 col-xl-10 col-lg-10 col-md-10 col">
                         <h6 class="mt-3">Search Students</h6>
                         <p style="color: #B4B4B4;">Search for students with their email address. You can also view the full list of registered students.</p>
                     </div>
@@ -59,9 +81,11 @@
                         <img src="images/Searchstudents.svg" alt="">
                     </div>
                 </div>
-                <div class="d-flex justify-content-end mb-4">
-                    <button class="btn text-light me-3" style="background-color: #010566;" onclick="gotoCheck()">Continue</button>
-                </div>
+                <!-- <div class="col border-top border-light" id="continue_btn" style="position: fixed; bottom: 0; left: 0; right: 28em; z-index: 1; background-color: #fff;">
+                    <div class="d-flex justify-content-end mb-4">
+                        <button class="btn text-light px-5 mt-4 me-5" style="background-color: #010566;" onclick="gotoCheck()">Continue</button>
+                    </div>
+                </div> -->
             </div>
             <div id="login_page" style="display: none;">
                 <h2 class="mb-5 ms-1 ms-md-5 ms-lg-5 mt-4">Log In</h2>
@@ -128,12 +152,12 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="col srow">
             <div class="mx-auto pt-5 mt-3">
-                <h1 class="text-center">We build and empower young problem solvers</h1>
-                <img class="mx-auto d-block mt-5" src="images/Weemp.svg" alt="" srcset="">
+                <h1 class="text-center pt-3">We build and empower young problem solvers</h1>
+                <img class="mx-auto d-block mt-5 pt-5 pb-sm-5 pb-5 pb-md-0 pb-lg-0 pb-xl-0 pb-xxl-0" src="images/Weemp.svg" alt="" srcset="">
             </div>
         </div>
     </div>
