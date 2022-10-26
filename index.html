@@ -13,32 +13,39 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
-        /* @media only screen and (min-width: 600px){
-            #continue_btn{
-                display: none;
-            }
+        /* #home_page{
+            overflow: hidden;
         } */
-        /* @media only screen and (max-width: 600px){
+        /* @media only screen and (min-width: 300px) and (max-width: 600px){
+            #continue_btn{ */
+                /* background-color: rgb(252, 252, 252); */
+                /* position: sticky;
+                bottom: 0; */
+                /* margin-left: 0; */
+                /* width: 100vw; */
+            /* }
+        }
+        @media only screen and (min-width: 600px) and (max-width: 820px){
             #continue_btn{
-                display: none;
+                background-color: purple;
             }
-        } */
-        /* @media only screen and (min-width: 768px){
+        }
+        @media only screen and (min-width: 820px) and (min-width: 992px){
             #continue_btn{
-                display: none;
+                background-color: midnightblue;
             }
-        } */
-        /* @media only screen and (min-width: 992px){
+        }
+        @media only screen and (min-width: 992px){
             #continue_btn{
-                display: none;
+                background-color: midnightblue;
             }
         } */
     </style>
 </head>
 <body class="container-fluid">
     <div class="row">
-        <div class="col  col-lg-8 col-md-12 px-5">
-            <div class="navbar navbar-expand-lg navbar-expand-md" role="navigation">
+        <div class="col col-lg-8 col-md-12 px-5 px-md-5 px-lg-5">
+            <div class="navbar navbar-expand-lg navbar-expand-md px-3 px-md-5 px-lg-5" role="navigation">
                 <a class="navbar-brand" href="index.html" target="_self">
                     <img src="images/logo3.png" alt="DaBAron Logo" width="170" srcset="">
                 </a>
@@ -52,9 +59,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="mx-nd-5 mx-lg-5" id="home_page">
+            <div class="mx-md-5 mx-lg-5" id="home_page">
                 <h2 class="mb-5 mt-2 mx-auto">What will you like to do?</h2>
-                <div class="row mx-md-3 mx-lg-3 border rounded mb-4 home_card" onclick="gotoCheck()">
+                <!-- style="display: none;" -->
+                <div class="row mx-md-3 mx-lg-3 border rounded mb-4 home_card" onclick="gotoCheck()" id="cg_page">
                     <div class="px-4 p-3 col-xl-10 col-lg-10 col-md-10 col">
                         <h6 class="mt-3">Check Grade</h6>
                         <p style="color: #B4B4B4;">Inputing your first, middle and last name with course code, you can check your grade.</p>
@@ -81,7 +89,7 @@
                         <img src="images/Searchstudents.svg" alt="">
                     </div>
                 </div>
-                <!-- <div class="col border-top border-light" id="continue_btn" style="position: fixed; bottom: 0; left: 0; right: 28em; z-index: 1; background-color: #fff;">
+                <!-- <div class="border-top border-light bg-dark" id="continue_btn">
                     <div class="d-flex justify-content-end mb-4">
                         <button class="btn text-light px-5 mt-4 me-5" style="background-color: #010566;" onclick="gotoCheck()">Continue</button>
                     </div>
@@ -90,8 +98,10 @@
             <div id="login_page" style="display: none;">
                 <h2 class="mb-5 ms-1 ms-md-5 ms-lg-5 mt-4">Log In</h2>
                 <div class="form px-1 px-md-5 px-lg-5 my-5 mw-80">
-                    <input class="form-control p-3 rounded mb-4" type="email" name="" id="email_Address" placeholder="Email Address">
-                    <input class="form-control p-3 rounded mb-4" type="password" name="" id="user_Password" placeholder="Password">
+                    <span class="text-danger" id="email_not" style="display: none;"><small>Email Address not found</small></span>
+                    <input class="form-control p-3 rounded mb-4" type="email" name="" id="email_Address" placeholder="Email Address" oninput="hideValidationMssg()">
+                    <span class="text-danger" id="pword_not" style="display: none;"><small>Password not found</small></span>
+                    <input class="form-control p-3 rounded mb-4" type="password" name="" id="user_Password" placeholder="Password" oninput="hideValidationMssg()">
                     <button class="btn text-light form-control p-3 rounded mb-4" type="text" name="" style="background-color: #010566;" onclick="logIn()">Log In</button> <br><br>
                     <p class="text-center">Don't have an account yet? <a href="#register_page" target="_self" onclick="showRegister()">Register</a></p><br>
                 </div>
@@ -100,11 +110,20 @@
                 <h2 class="mb-5 ms-1 ms-md-5 ms-lg-5 mt-4">Register</h2>
                 <div class="form px-1 px-md-5 px-lg-5 my-5">
                     <div class="d-md-flex d-lg-flex">
-                        <input placeholder="First Name" class="form-control p-3 me-4 mb-4 mb-md-0 mb-lg-0 rounded col" type="text" name="" id="firstName">
-                        <input placeholder="Middle Name" class="form-control p-3 rounded col" type="text" name="" id="middleName">
+                        <div class="form-control border-0">
+                            <span class="text-danger" id="fname_not"><small>First Name not found</small></span>
+                            <input placeholder="First Name" class="form-control p-3 me-4 mb-4 mb-md-0 mb-lg-0 rounded col" type="text" name="" id="firstName">
+                        </div>
+                        <div class="form-control border-0">
+                            <span class="text-danger" id="mname_not"><small>Middle Name not found</small></span>
+                            <input placeholder="Middle Name" class="form-control p-3 rounded col" type="text" name="" id="middleName">
+                        </div>
                     </div><br>
+                    <span class="text-danger" id="lname_not"><small>Last Name not found</small></span>
                     <input placeholder="Last Name" class="form-control p-3 rounded" type="text" name="" id="lastName"><br>
+                    <span class="text-danger" id="emaill_not"><small>Email Address not found</small></span>
                     <input placeholder="Email Address" class="form-control p-3 rounded" type="email" name="" id="emailAddress"><br>
+                    <span class="text-danger" id="pwordd_not"><small>Password not found</small></span>
                     <input placeholder="Password" class="form-control p-3 rounded" type="password" name="" id="userPassword"><br>
                     <button class="btn text-light form-control p-3 rounded" type="text" name="" onclick="addStudent()" style="background-color: #010566;">Register</button>
                     <br><br>
@@ -112,7 +131,7 @@
                 </div>
             </div>
             <div id="check_grade" style="display: none;">
-                <h2 class="mb-5 mt-5 px-1 px-md-5 px-lg-5">Check Grade</h2>
+                <h2 class="mb-5 px-1 px-md-5 px-lg-5">Check Grade</h2>
                 <div class="form px-1 px-md-5 px-lg-5 my-5">
                     <div class="d-md-flex d-lg-flex">
                         <input class="form-control p-3 me-4 rounded mb-4 mb-md-0 mb-lg-0" type="text" name="" id="f_name" placeholder="First Name">
