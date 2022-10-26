@@ -1,8 +1,16 @@
 let gotoCheck = () =>{
-    home_page.style.display = "none"
-    check_grade.style.display = "block"
-    login_page.style.display = "none"
-    register_page.style.display = "none"
+    let userchoice =  prompt("Have you Registered?")
+    let result = userchoice.toLowerCase()
+    console.log(result);
+    if(result == "no"){
+        showLogin()
+    }
+    else{
+        home_page.style.display = "none"
+        check_grade.style.display = "block"
+        login_page.style.display = "none"
+        register_page.style.display = "none"
+    }
 }
 let gotoCourse = () =>{
     home_page.style.display = "none"
@@ -36,20 +44,24 @@ if (localStorage.student_details){
 //registerfunction
 let addStudent = () =>{
     if (firstName.value == "" || middleName.value == "" || lastName.value == "" || emailAddress.value == "" || userPassword.value == ""){
-        warning.style.visibility = "visible"
-        if (firstName.value == "") {
+        if (firstName.value == ""){
+            fname_not.style.display = "block"
             firstName.focus()
         }
         else if (middleName.value == ""){
+            mname_not.style.display = "block"
             middleName.focus()
         }
         else if (lastName.value == ""){
+            lname_not.style.display = "block"
             lastName.focus()
         }
         else if (emailAddress.value == ""){
+            emaill_not.style.display = "block"
             emailAddress.focus()
         }
         else if (userPassword.value == ""){
+            pwordd_not.style.display = "block"
             userPassword.focus()
         }
     }
@@ -62,25 +74,43 @@ let addStudent = () =>{
             password: userPassword.value
             }
     
-    allStudents.push(newStudent)
-    console.log(allStudents)
-    console.log(newStudent)
-    var timeReg = new Date()
-    timeReg = timeReg.toDateString()
-    alert("Student has been succesfully added. Your matric number is IC" + Math.round(Math.random() * 20000) + " Date : " + timeReg)
+        allStudents.push(newStudent)
+        console.log(allStudents)
+        console.log(newStudent)
+        var timeReg = new Date()
+        timeReg = timeReg.toDateString()
+        alert("Student has been succesfully added. Your matric number is IC" + Math.round(Math.random() * 20000) + " Date : " + timeReg)
+        localStorage.setItem("student_details", JSON.stringify(allStudents))
+        firstName.value = ""
+        middleName.value = ""
+        lastName.value = ""
+        emailAddress.value = ""
+        userPassword.value = ""
+        showLogin()
     }
-    localStorage.setItem("student_details", JSON.stringify(allStudents))
-    firstName.value = ""
-    middleName.value = ""
-    lastName.value = ""
-    emailAddress.value = ""
-    userPassword.value = ""
-    //window.location.href = "index.html"
-    showLogin()
+}
+ 
+//validation check
+let hideValidationMssg = () =>{
+    email_not.style.display = "none"
+    pword_not.style.display = "none"
+    fname_not.style.display = "none"
+    mname_not.style.display = "none"
+    lname_not.style.display = "none"
+    emaill_not.style.display = "none"
+    pwordd_not.style.display = "none"
 }
 
 // login function
 let logIn = () =>{
+    if(email_Address.value == ""){
+        email_not.style.display = "block"
+        // alert("email not found")
+    }
+    else if(user_Password.value == ""){
+        pword_not.style.display = "block"
+        // alert("Password not found")
+    }
     let found = false
     //alert("li")
     if(email_Address.value != "" && user_Password.value != ""){
@@ -92,20 +122,19 @@ let logIn = () =>{
             }
         })  
     }
-    else if(email_Address.value == "" || user_Password.value == ""){
-        document.getElementById("warning").style.display = "block"
-    }
     if (found == true) {
         //alert("logged in")
         window.location.href = "index.html"
+        // cg_page.style.display = "block"     
     } 
     else if (found == false) {
             // console.log("Not found")
             // alert("Invalid Email Address or Password")
-        document.getElementById("warning").style.visibility = "visible"
+        email_not.style.display = "block"
+        pword_not.style.display = "block"
         email_Address.value = ""
         user_Password.value = ""
-        email_Address.focus()
+        // email_Address.focus()
     } 
 } 
 
