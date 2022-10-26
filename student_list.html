@@ -29,10 +29,10 @@
         <div class="p-4 row" style="background: #F8FAFB;">
             <div class="d-flex mb-4 mb-md-0 mb-lg-0 col-12 col-lg-5 col-md-5">
                     <!-- background-color: #010566;  -->
-                <button id="form-control" class="btn border border-end-0" onclick="searchList()" style="border-top-right-radius: 0; border-bottom-right-radius: 0; background-color: #fff;">
+                <input class="form-control w-100" type="text" id="Search" placeholder="Name or Email Address" style="width: 2em; border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                <button id="form-control" class="btn border border-start-0" onclick="searchList()" style="border-top-left-radius: 0; border-bottom-left-radius: 0; background-color: #fff;">
                     <img src="images/searchicon.svg" width="15" alt="" srcset="">
                 </button>
-                <input class="form-control border-start-0 w-100" type="text" id="Search" placeholder="Name or Email Address" style="width: 2em; border-top-left-radius: 0; border-bottom-left-radius: 0;">
             </div>
             <div class="col-md-3 col-lg-3 col-12"></div>
             <div class="col-12 col-lg-3 col-md-3">
@@ -45,17 +45,18 @@
                 </button>
             </div>   
         </div>
-        <table class="text-center text-dark table" id="search_list">
-            <!-- style="display: none;" -->
-            <thead id="table_head">
-                <th class="py-3">S/N</th>
-                <th class="py-3">First Name</th>
-                <th class="py-3">Middle Name</th>
-                <th class="py-3">Last Name</th>
-                <th class="py-3">E-mail Address</th>
-                <th class="py-3">Date Registered</th>
-            </thead>
-        </table>  
+    </div>
+    <table class="text-center text-dark table" id="search_list">
+            <!-- style="display: none;" --> 
+        <thead id="table_head">
+            <th class="py-3">S/N</th>
+            <th class="py-3">First Name</th>
+            <th class="py-3">Middle Name</th>
+            <th class="py-3">Last Name</th>
+            <th class="py-3">E-mail Address</th>
+            <th class="py-3">Date Registered</th>
+        </thead>
+    </table>  
 </body>
 <script>   
 var all_students = JSON.parse(localStorage.getItem("student_details"))

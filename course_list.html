@@ -14,7 +14,7 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-    <div class="navbar navbar-expand-lg navbar-expand-md px-5" role="navigation" style="background-color: #010566;">
+    <div class="navbar navbar-expand-lg navbar-expand-md px-3" role="navigation" style="background-color: #010566;">
         <a class="navbar-brand" href="index.html" target="_self">
             <img src="images/logo2.png" alt="DaBAron Logo" width="175" srcset="">
         </a>
@@ -29,32 +29,26 @@
         </div>
     </div>
     <div>
-        <h3 class="my-4 ms-5">Course List</h3>
-        <div>
-            <div class="p-4 d-md-flex d-lg-flex w-100" style="background: #F8FAFB;">
-                <div class="d-flex ms-4 justify-content-start mb-4 mb-md-0 mb-lg-0 w-75">
+        <h3 class="my-4 ms-3 ms-md-5 ms-lg-5">Course List</h3>
+        <div class="p-4 row" style="background: #F8FAFB;">
+            <div class="d-flex mb-4 mb-md-0 mb-lg-0 col-12 col-lg-5 col-md-5">
                     <!-- background-color: #010566;  -->
-                    <button id="form-control" class="btn border border-end-0" onclick="searchList()" style="border-top-right-radius: 0; border-bottom-right-radius: 0; background-color: #fff;">
-                        <img src="images/searchicon.svg" width="15" alt="" srcset="">
-                    </button>
-                    <input class="form-control border-start-0 w-50" type="text" id="Search" placeholder="Course code or Title" style="width: 2em; border-top-left-radius: 0; border-bottom-left-radius: 0;">
-                </div>
-                <div class="justify-content-end ms-4 mw-50 w-auto">
-                    <button class="btn text-light text-center w-100 px-5" style="background-color: #010566;">
-                        <span class="ps-3 pe-1">
-                            <img src="images/cg0.1.png" alt="" srcset="" style="margin-bottom: 1.2em;">
-                            <img src="images/cg0.png" alt="" style="position: absolute; margin-left: -1.138em; margin-top: 0.3em;">
-                        </span>
-                        Check Grade
-                    </button>
-                </div>   
+                <input class="form-control w-100" type="text" id="Search" placeholder="Name or Email Address" style="width: 2em; border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                <button id="form-control" class="btn border border-start-0" onclick="searchList()" style="border-top-left-radius: 0; border-bottom-left-radius: 0; background-color: #fff;">
+                    <img src="images/searchicon.svg" width="15" alt="" srcset="">
+                </button>
             </div>
-            <!-- <p class="text-center">
-                <a href="student_list.html" class=" text-warning" target="_self">
-                    Get Full list of registered student
-                </a>
-            </p> -->
-    </div>
+            <div class="col-md-3 col-lg-3 col-12"></div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <button class="btn text-light text-center w-100 px-5" style="background-color: #010566;">
+                    <span class="ps-3 pe-1">
+                        <img src="images/cg0.1.png" alt="" srcset="" style="margin-bottom: 1.2em;">
+                        <img src="images/cg0.png" alt="" style="position: absolute; margin-left: -1.138em; margin-top: 0.3em;">
+                    </span>
+                        Check Grade
+                </button>
+            </div>   
+        </div>
     <table class="text-center text-dark table" id="search_list">
         <thead id="table_head">
             <th class="py-3">S/N</th>
